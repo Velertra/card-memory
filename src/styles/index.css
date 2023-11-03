@@ -1,3 +1,7 @@
+body {
+  overflow: hidden;
+}
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,11 +16,128 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  background-image: url('/trolls_world_tour_sp_6.jpg');
+  /*background-image: url('/trolls_world_tour_sp_6.jpg'); 
+  background-image: url('/trolls.gif');
+   
+  background-image: url('/public/TrollsMade.gif'); */
+  background-image: url('/public/trollsTrumpetBackground.gif');
   background-size: cover;
   height: 100%;
-  background-repeat: no-repeat;
   background-position: center;
   position: relative;
+
 }
 
+/* start seperating  */
+
+.help-btn{
+  position: absolute;
+  height: 15%;
+  bottom: 5%;
+  right: 19%;
+}
+
+.volume-btn{
+  position: absolute;
+  height: 15%;
+  bottom: 5%;
+  right: 5%;
+}
+
+
+
+
+/* level cards */
+
+.level-choices{
+  display: flex;
+  padding-top: 4vh;
+}
+
+
+.level-choices img{
+  width: 90%;
+}
+
+.easy-btn-text,
+.med-btn-text,
+.hard-btn-text {
+  color: #e9904c;
+  position: absolute;
+  top: 35%;
+  font-size: 3.4rem;
+}
+
+.easy-btn-text{
+  left: 12.5%;
+}
+
+.med-btn-text{
+  
+  left: 46%;
+}
+
+.hard-btn-text{
+  right: 10%;
+}
+
+h2:active{
+  color: #e37e30;
+  box-shadow: 0 5px #e37e30;
+
+
+}
+
+.trolls-logo{
+  height: 20vh;
+}
+
+.game-name{
+  color: #e9904c;
+  padding-left: 15vh;
+  margin: 0;
+}
+
+
+/* levels card animation */
+.level-choices img,
+.easy-btn-text,
+.med-btn-text,
+.hard-btn-text{
+  animation: wiggle 3.45s linear infinite;
+}
+
+
+@keyframes wiggle {
+  0% {
+    transform: translateX(20px);
+  }
+  25% {
+    transform: translateY(20px);
+  }
+  50% {
+    transform: translateX(-20px);
+  }
+  75% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateX(20px);
+  }
+}
+
+/* 
+loading image */
+
+.loading-page{
+  position: absolute;
+  left: 30%;
+  top: 8%;
+}
+
+.loading-text{
+  color: #f13174ed;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
