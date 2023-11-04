@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import StartGame from './components/StartPage'
+import LandingPage from './components/LandingPage'
 import './styles/index.css'
 import LoadingImage from './components/LoadingImage'
 
@@ -16,7 +16,7 @@ function App() {
   <>
     {!loadingPage ? <LoadingImage /> :
       
-     <StartGame />
+     <LandingPage />
      }
   </>
   )
