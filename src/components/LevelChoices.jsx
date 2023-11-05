@@ -1,21 +1,30 @@
 import CardImage from './CardImages';
+import { useState } from 'react';
 
-const LevelChoices = ({ level, handleonclick}) => {
 
+const LevelChoices = ({ levelChoice, pickLevel}) => {
+    const [level, setLevel] = useState('');
+
+    function HandleOnClick(){
+        setLevel('yello')
+    }
 
     return ( 
-        <div className={'level-choices'}>
+        <>
             <CardImage 
-                level='easy'
+                levelChoice='easy'
+                pickLevel={pickLevel}
             />
-            <CardImage
-                level='med'
+            <CardImage 
+                levelChoice='med'
+                pickLevel={pickLevel}
             />
-            <CardImage
-                level='hard'
+            <CardImage 
+                levelChoice='hard'
+                pickLevel={pickLevel}
             />
-            <h2 className={level + "-btn-text"}>{level}</h2>
-        </div>    
+            {/* <h2 className={pickLevel + "-btn-text"}>{pickLevel}</h2> */}
+        </>    
      );
 }
  

@@ -14,7 +14,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-  background-image: url('/public/images/trolls_world_tour_sp_6.jpg'); 
+  background-image: url('/images/trolls_world_tour_sp_6.jpg'); 
   /*background-image: url('/public/images/trollsCharilieBrown.gif');
   background-image: url('/public/images/public/TrollsMade.gif'); 
   background-image: url('/public/images/public/trollsTrumpetBackground.gif');*/
@@ -78,13 +78,14 @@ h2:active{
 }
 
 .trolls-logo{
-  height: 20vh;
+  width: 30%;
 }
 
 .game-name{
   color: #e9904c;
   padding-left: 15vh;
   margin: 0;
+  width: 100%;
 }
 
 

@@ -1,36 +1,42 @@
 import {useState} from 'react';
 import PropTypes from 'prop-types';
 import CardImages from './CardImages';
-import LogoBtn from './StartGame';
-import LevelChoices from './LevelChoices';
 
 
-const GamePlay = () => {
-    const [gamePlay, setGamePlay] = useState(false);
+const GamePlay = ({ gameLevel }) => {
+    //creates array, then uses amount to display equal amount of cards
+    let number = 0;
+
+    if(gameLevel === 'easy'){
+        number = 4;
+    } else if(gameLevel === 'med'){
+        number = 8;
+    } else {
+        number = 16;
+    }
+
+    const levelArr = [];
+
+    for(let x = 0; x < number; x++){
+        levelArr.push( x);
+    }
 
     const cardStyles = {
-        /* backgroundColor: 'lightblue',
-        color: 'black', */
         width: '30vh',
     }
 
     return ( 
         <>
-            {gamePlay ? <><CardImages
-                styles={cardStyles}
-            />
-            <CardImages 
-                styles={cardStyles}
-            />
-            <CardImages
-                styles={cardStyles}
-            />
-            <CardImages 
-                styles={cardStyles}
-            /></>
-                :<>
-            <LogoBtn />
-            <LevelChoices /></>}
+            {levelArr.map((index) =>
+                        <div key={index}>
+                            <CardImages
+                                name={`card_${index}`}
+                                styles={cardStyles}
+                                levelChoice={`card_${index}`}
+
+                    /></div>)}
+               
+            
         </>
      );
 }

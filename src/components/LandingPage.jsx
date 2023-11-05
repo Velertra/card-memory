@@ -1,42 +1,59 @@
 import { useState, useEffect } from 'react'
 import HelpBtn from "./HelpBtn";
-import Levels from "./LevelChoices"
-import Logo from './StartGame'
 import VolumeBtn from "./VolumeBtn";
 import GamePlay from './GamePlay';
+import HomeBtn from './HomeBtn';
+import LevelChoices from './LevelChoices';
 
 const LandingPage = () => {
     const [startGame, setStartGame] = useState(false);
-    const [gameChoice, setGameChoice] = useState('');
+    const [gameLevel, setGameLevel] = useState('');
 
-    function handleClick(e) {
-        setGameChoice(e.target.textContent);
-        console.log(gameChoice)
+    useEffect(() => {
+        /* console.log('test')
+        console.log(gameLevel.length) */
+    },[gameLevel])
+
+    function stopGame(){
+        setStartGame(false);
     }
 
-    function handleHelpBtn(){
-        console.log('yoyoma')
+    function pickLevel(test){
+             setGameLevel(test);
+             setStartGame(true)
+             //console.log(test)
+            
     }
 
     return (
         <>  
             <div className="game-container">
-                {!startGame
-                    ? 
-                    <GamePlay 
-                        check={gameChoice}
-                    />
+                {startGame ?
+                    <>
+                        <HomeBtn
+                            isAButton={true}
+                            stopGame={stopGame}
+                        />
+                        <div className='level-choices'>
+                            <GamePlay
+                                gameLevel={gameLevel}
+                            />
+                        </div>
+                    </> 
                     :
                     <>
-                        <Logo />
-                        <Levels />
+                        <HomeBtn
+                            isAButton={false}
+                         />
+                        <div className='level-choices'>
+                            <LevelChoices
+                                pickLevel={pickLevel}
+                            />
+                        </div>
                     </>}
-            </div>
+                </div>
             <div className="menu-container">
-                <HelpBtn
-                    onClick={() => console.log('check')}
-                    handleHelpBtn={handleHelpBtn}
-                />  
+                <HelpBtn />  
                 <VolumeBtn />    
             </div>
         </>

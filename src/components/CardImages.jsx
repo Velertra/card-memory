@@ -1,17 +1,35 @@
-const CardImages = ({ level, children, styles}) => {
+import{ useState } from 'react';
 
-    //const cardStyles = styles;
+const CardImages = ({ levelChoice, styles, pickLevel, name}) => {
+    /* const [level, setLevel] = useState(''); */
+
+    //handle card clicks here for now.
+   function handleOnClick(x){
+        if(pickLevel !== undefined){
+            pickLevel(x)
+        }
+    
+   }
 
     return ( 
-        <>
+        <div key={name}>
             <img 
-                className={level}
+                key={name}
+                className={levelChoice}
                 src="/icons/cardTrolls.svg"
-                alt={level}
+                alt={levelChoice}
                 style={styles}
+                onClick={() => handleOnClick(levelChoice)}
             ></img>
-            <h2 className={level + "-btn-text"}>{level}</h2>
-        </>
+            {true ? null 
+            : 
+            <h2
+                key={name}
+                
+                className={levelChoice + "-btn-text"}>
+                {levelChoice}
+            </h2>}
+        </div>
         
      );
 }

@@ -20,7 +20,7 @@ const HelpBtn = ({handleHelpBtn}) => {
             {wasHelpClicked ? <div className='help-tab'>GO HELP YOURSELF</div> : null}
                 <img
                     className="help-btn"
-                    src="/public/icons/help-circle.svg" 
+                    src="/icons/help-circle.svg" 
                     alt="help-btn"
                     onClick={() => handleHelpBtn()}
                     />

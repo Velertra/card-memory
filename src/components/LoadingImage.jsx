@@ -4,7 +4,7 @@ const LoadingImage = () => {
             <h1 className="loading-text">Loading...</h1>
             <img 
                 className="loading-image"
-                src="/public/images/trollsLoanding.gif"
+                src="/images/trollsLoanding.gif"
             />
         </div>
      );
