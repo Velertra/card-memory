@@ -4,6 +4,7 @@ import CardImages from './CardImages';
 
 
 const GamePlay = ({ gameLevel }) => {
+    
     //creates array, then uses amount to display equal amount of cards
     let number = 0;
 
@@ -24,17 +25,34 @@ const GamePlay = ({ gameLevel }) => {
     const cardStyles = {
         width: '30vh',
     }
+    //all for card images
+
+    const characterImages = [
+        'characters/branchtroll.png',
+        'characters/guy-diamond-trolls.jpg',
+        'characters/troll-hero.png',
+        'characters/trollspoppy2.png'
+    ]
+    function runthiscode() {
+        
+        /* const ranNumber = Math.floor(Math.random() * number ); */
+      
+       
+        return characterImages[ranNumber]
+    }
+
 
     return ( 
         <>
             {levelArr.map((index) =>
-                        <div key={index}>
-                            <CardImages
-                                name={`card_${index}`}
-                                styles={cardStyles}
-                                levelChoice={`card_${index}`}
+                <div key={index}>
+                    <CardImages
+                        name={`card_${index}`}
+                        styles={cardStyles}
+                        levelChoice={`card_${index}`}
 
-                    /></div>)}
+                /><img src={runthiscode()}/>
+                </div>)}
                
             
         </>

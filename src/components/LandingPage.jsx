@@ -44,6 +44,7 @@ const LandingPage = () => {
                     <>
                         <HomeBtn
                             isAButton={false}
+                            stopGame={null}
                          />
                         <div className='level-choices'>
                             <LevelChoices
