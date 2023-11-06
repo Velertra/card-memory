@@ -1,9 +1,19 @@
-# card-memory
+# Card Memory
 
-React + Vite
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Card Memory is a simple memory card game designed for toddlers, featuring animations and sounds from the movie Trolls. It has three difficulty levels(Easy, Medium, and Hard) to work with diffrenet age groups and skill levels.
 
-Currently, two official plugins are available:
+Tech Used
+* Javascript
+* CSS
+* HTML
+* REACT
+* VITE
+* NPM
+* WEBPACK
+* ESLINT
 
-@vitejs/plugin-react uses Babel for Fast Refresh
-@vitejs/plugin-react-swc uses SWC for Fast Refresh
+Prereq
+* Node.js and npm(Node Package Manager) - You Can get them here [nodejs.org](nodejs.org).
+
+
+
