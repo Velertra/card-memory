@@ -40,7 +40,8 @@ body {
 }
 
 /* level cards */
-.level-choices{
+.level-choices,
+.play-area{
   display: flex;
   padding-top: 4vh;
 }
@@ -48,6 +49,10 @@ body {
 
 .level-choices img{
   width: 32%;
+}
+
+.play-area{
+  flex-wrap: wrap;
 }
 
 .easy-btn-text,
@@ -91,6 +96,7 @@ h2:active{
 
 /* levels card animation */
 .level-choices img,
+.play-area,
 .easy-btn-text,
 .med-btn-text,
 .hard-btn-text{

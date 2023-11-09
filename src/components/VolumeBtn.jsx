@@ -14,7 +14,7 @@ const VolumeBtn = () => {
 
     return (
         <div>
-            {!playMusic ? null : <><BackgroundMusic/><div>check</div></>}
+            {!playMusic ? null : <><BackgroundMusic /></>}
             {!playMusic
                 ?
                 <img 

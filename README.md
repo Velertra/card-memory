@@ -9,7 +9,6 @@ Tech Used
 * REACT
 * VITE
 * NPM
-* WEBPACK
 * ESLINT
 
 Prereq

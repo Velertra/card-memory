@@ -1,6 +1,7 @@
 import {useState} from 'react';
 import PropTypes from 'prop-types';
 import CardImages from './CardImages';
+import ArrayDisplay from './ArrayDisplay';
 
 
 const GamePlay = ({ gameLevel }) => {
@@ -23,7 +24,7 @@ const GamePlay = ({ gameLevel }) => {
     }
 
     const cardStyles = {
-        width: '30vh',
+        width: '20vh',
     }
     //all for card images
 
@@ -35,7 +36,7 @@ const GamePlay = ({ gameLevel }) => {
     ]
     function runthiscode() {
         
-        /* const ranNumber = Math.floor(Math.random() * number ); */
+        const ranNumber = Math.floor(Math.random() * number );
       
        
         return characterImages[ranNumber]
@@ -51,7 +52,7 @@ const GamePlay = ({ gameLevel }) => {
                         styles={cardStyles}
                         levelChoice={`card_${index}`}
 
-                /><img src={runthiscode()}/>
+                /><ArrayDisplay />
                 </div>)}
                
             

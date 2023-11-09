@@ -34,7 +34,7 @@ const LandingPage = () => {
                             isAButton={true}
                             stopGame={stopGame}
                         />
-                        <div className='level-choices'>
+                        <div className='play-area'>
                             <GamePlay
                                 gameLevel={gameLevel}
                             />
