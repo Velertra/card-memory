@@ -14,13 +14,3 @@ describe('App', () => {
   });
 }); */
 
-/* 
-fetch('https://api.giphy.com/v1/gifs/translate?api_key=EPHdw7WFvcqzXLwX6bqAM1RNjhXYEorU&s=cats', {mode: 'cors'})
-    .then((response) => {return response.json()})
-    .then((response) => { console.log(response.data.images.original.url)})
-
- */
-
-    test('', () => {
-        expect
-    })
