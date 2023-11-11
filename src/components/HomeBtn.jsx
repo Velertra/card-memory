@@ -28,7 +28,6 @@ const HomeBtn = ({ isAButton, stopGame }) => {
                 alt="trolls-logo"
             />
                 <p className="game-name">Memory match</p>
-                
         </div>
      );
 }

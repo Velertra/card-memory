@@ -1,18 +1,14 @@
 import { useState, useEffect } from 'react'
 import HelpBtn from "./HelpBtn";
 import VolumeBtn from "./VolumeBtn";
-import GamePlay from './GamePlay';
+//import GamePlay from './GamePlay';
 import HomeBtn from './HomeBtn';
 import LevelChoices from './LevelChoices';
+import TrialGamePlay from '../tests/TrialGamePlay';
 
 const LandingPage = () => {
     const [startGame, setStartGame] = useState(false);
     const [gameLevel, setGameLevel] = useState('');
-
-    useEffect(() => {
-        /* console.log('test')
-        console.log(gameLevel.length) */
-    },[gameLevel])
 
     function stopGame(){
         setStartGame(false);
@@ -35,7 +31,7 @@ const LandingPage = () => {
                             stopGame={stopGame}
                         />
                         <div className='play-area'>
-                            <GamePlay
+                            <TrialGamePlay
                                 gameLevel={gameLevel}
                             />
                         </div>

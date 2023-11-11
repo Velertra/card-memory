@@ -1,0 +1,51 @@
+const imageSelection = [
+    'characters/branchtroll.png',
+    'characters/guy-diamond-trolls.jpg',
+    'characters/troll-hero.png',
+    'characters/trollspoppy2.png',
+    'characters/pinkgiraffe.jpg',
+    'characters/orangeguy.png',
+    'characters/kinggrist.jpg',
+    'characters/bigBlueTroll.png',
+    'characters/kingsgirl.jpeg'
+];
+
+//creates an array of numbers 0 - "cardAmount" that doesnt repeat a previous number as long as theres enough images(imageSelection).
+function createRandomNumberArr(cardAmount){
+    const randomNumbers = [];
+        for(let x = 0; randomNumbers.length < cardAmount; x++){
+            const number = Math.floor(Math.random() * imageSelection.length)
+            if(randomNumbers === undefined){ 
+                randomNumbers.push(number);
+            } else if(!randomNumbers.includes(number)){
+                randomNumbers.push(number);
+            }
+        }
+    return randomNumbers;
+}
+
+//reorders Array
+function reorderArray(array){
+    const newArr = [...array, ...array];
+    for (let i = newArr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [newArr[i], newArr[j]] = [newArr[j], newArr[i]];
+    }
+    return newArr
+}
+
+//merges number array and image array together so you get an array with duplicate images in random order
+function MergeArr(cardAmount){
+    const ranNumbers = createRandomNumberArr(cardAmount);
+    const reorderedArr = reorderArray(ranNumbers);
+     let trollsArray = [];
+    for(const image in reorderedArr){
+        const number = reorderedArr[image];
+        trollsArray.push(imageSelection[number])
+    }
+    return trollsArray;
+}
+
+export default MergeArr;
+
+
