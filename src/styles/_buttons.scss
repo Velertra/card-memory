@@ -1,0 +1,37 @@
+.help-btn,
+.volume-btn{
+    position: absolute;
+    height: 12vh;
+    bottom: 5vh;
+}
+
+.volume-btn{
+    right: 10vh;
+}
+ 
+.help-btn{
+    right: 25vh;
+}
+
+//the help popup
+.help-tab{
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    background-color: #e37e30;
+    width: 40vh;
+    height: 40vh;
+  }
+
+  //homeBtn
+.trolls-logo{
+    padding: 1vh;
+    width: 23vh;
+}
+
+.game-name{
+    color: #e9904c;
+    padding-left: 15vh;
+    margin: 0;
+    width: 100%;
+}

@@ -5,6 +5,7 @@ const TrialGamePlay = ({gameLevel}) => {
     const [level, setLevel] = useState('');
     const [imageArray, setImageArray] = useState([]);
     const [onSwitch, setOnSwitch] = useState(false)
+    const [win, setWin] = useState(true);
     let imgFirstPick = {
         name:'',
         title:'',
@@ -27,11 +28,9 @@ const TrialGamePlay = ({gameLevel}) => {
     function deleteFromArray(card){
         //console.log(card.slice(-15))
         const newState = imageArray.map(images => ((images.includes(card.slice(-15))) ? '' : images));
-        //console.log(newState)
+        
         setImageArray(() => newState)
-        if((newState.map(image => image !== '')).length === 0){
-            console.log('you did itttt!!')
-        }
+        
     }
 
     function compareTheCards(card, imgTitle){
@@ -61,6 +60,13 @@ const TrialGamePlay = ({gameLevel}) => {
             compareTheCards(cardValue, titleName); 
         }
     }
+
+    useEffect(() => {
+        if(!win && imageArray.every(section => section.length == 0)){
+            console.log('you win!')
+        }
+        setWin(() => false)
+    }, [imageArray])
 
     useEffect(() => {
         handleSet()

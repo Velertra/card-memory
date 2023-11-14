@@ -1,96 +1,92 @@
 import {useState, useEffect} from 'react';
-import PropTypes from 'prop-types';
-import CardImages from './CardImages';
-import ArrayDisplay from './ArrayDisplay';
-import LevelChoices from './LevelChoices';
-import FirstOne from '../tests/sandbox';
+import MergeArr from '../utilities/CreateImageArray';
+import CardImages from '../utilities/CardImages';
 
+const TrialGamePlay = ({ gameLevel, styleChange }) => {
+    const [level, setLevel] = useState('');
+    const [imageArray, setImageArray] = useState([]);
+    const [onSwitch, setOnSwitch] = useState(false)
+    const [win, setWin] = useState(true);
+    let imgFirstPick = {
+        name:'',
+        title:'',
+    };
+    
 
-const GamePlay = ({ gameLevel }) => {
-    const [levelNumber, setLevelNumber] = useState('')
-    const [levelArr, setLevelArr] = useState([]);
-    const characterImages = [
-        'characters/branchtroll.png',
-        'characters/guy-diamond-trolls.jpg',
-        'characters/troll-hero.png',
-        'characters/trollspoppy2.png'
-    ]
-
-    if(gameLevel === 'easy'){
-        setLevelNumber(() => 4);
-    } else if(gameLevel === 'med'){
-        setLevelNumber(() => 8);
-    } else {
-        setLevelNumber(() => 16);
+    //number of cards to duplicate
+    function handleSet(){
+        if(gameLevel === 'easy'){
+            setLevel(() => 2);
+        } else if(gameLevel === 'med'){
+            setLevel(() => 4);
+        } else {
+            setLevel(() => 8);
+        }
     }
 
-    //vxcvxccvxxxxx
-    let imageUpThere = [];
+    function deleteFromArray(card){
+        const newState = imageArray.map(images => ((images.includes(card.slice(-15))) ? '' : images));
+        setImageArray(() => newState)   
+    }
 
-    FirstOne(characterImages, 4)
+    //if another card was pressed this will check that card with the previous card hit
+    function compareTheCards(card, imgTitle){
+        if(imgFirstPick.name == card && imgFirstPick.title !== imgTitle){
+            console.log("go get a cookie!")
+            deleteFromArray(card)
+        } else if(imgFirstPick.name == card && imgFirstPick.title == imgTitle){
+            console.log('you hit this on purpose?')
+        }else{
+            console.log('sorry ya tried')
+        }
+        imgFirstPick = {
+            name:'',
+            title:'',
+        };
+    }
+
+    //when a card is clicked in the game this will check to see if another card has been pressed
+    function handleImgClick(e){
+        const cardValue = e.target.src;
+        const titleName = e.target.className;
+        if(imgFirstPick.name == ''){
+            imgFirstPick = {
+                name: cardValue,
+                title: titleName,
+            }
+        } else{
+            compareTheCards(cardValue, titleName); 
+        }
+    }
+
+    //calls after imageArray is empty;
+    useEffect(() => {
+        if(!win && imageArray.every(section => section.length == 0)){
+            console.log('you win!')
+        }
+        setWin(() => false)
+    }, [imageArray])
 
     useEffect(() => {
-        //FirstOne(characterImages, 4)
-/* 
-    imageUpThere = [];
-        
-        setLevelArr(() => [])
-        //creates array, then uses amount to display equal amount of cards
-    //let number = 0;
-
-    if(gameLevel === 'easy'){
-        setLevelNumber(() => 4);
-    } else if(gameLevel === 'med'){
-        setLevelNumber(() => 8);
-    } else {
-        setLevelNumber(() => 16);
-    }
-
-    for(let x = 0; x < (levelNumber); x++){
-
-        
-        const ranNum = Math.floor(Math.random() * characterImages.length)
-        const ranImage = characterImages[ranNum];
-        console.log()
-        if((imageUpThere[0] && imageUpThere[2])!== ranImage){
-
-            imageUpThere.push(characterImages[ranNum])
+        handleSet()
+        if(level !== ''){
+            const images = MergeArr(level)
+            setImageArray(images)
+            setOnSwitch(true)
         }
-            //imageUpThere.push(characterImages[ranNum])
-            //console.log(imageUpThere)
-            //setLevelArr(...x)
-            //levelArr.push(x)
-            //console.log(levelArr)
-    }
-    setLevelArr(() => imageUpThere)
- */
-
-    }, []);
-
-    const cardStyles = {
-        width: '20vh',
-    }
+    }, [level])
 
     return ( 
         <>
-            {levelArr.map((image, index) =>
-                 <div key={index}>
-                  {/*  <CardImages
-                        name={`card_${index}`}
-                        styles={cardStyles}
-                        levelChoice={`card_${index}`}
-                    /> */}
-                    <img style={cardStyles} src={image}/>
-                    {/* <ArrayDisplay /> */}
-                </div>)}
-               
+        {onSwitch ? imageArray.map((image, index) => 
             
+                <img key={index} onClick={(e) => handleImgClick(e)} className={`image-${index}`} src={image}></img>
+           
+            ) 
+            : 
+            <div>theycantdothat</div>}
         </>
      );
 }
  
-export default GamePlay;
-
-/* GamePlay.propTypes = {
-    check: PropTypes.string.isRequired
-} */
+export default TrialGamePlay;

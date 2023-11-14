@@ -1,0 +1,49 @@
+@import 'buttons';
+@import 'gamePlay';
+@import 'animation';
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  background-image: url('/images/trolls_world_tour_sp_6.jpg'); 
+  /*background-image: url('/public/images/trollsCharilieBrown.gif');
+  background-image: url('/public/images/public/TrollsMade.gif'); 
+  background-image: url('/public/images/public/trollsTrumpetBackground.gif');*/
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  position: relative;
+}
+
+body {
+  overflow: hidden;
+}
+
+h2:active{
+  color: #e37e30;
+  box-shadow: 0 5px #e37e30;
+}
+
+/* loading image */
+.loading-page{
+  position: absolute;
+  left: 30%;
+  top: 8%;
+}
+
+.loading-text{
+  color: #f13174ed;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}

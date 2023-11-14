@@ -1,4 +1,4 @@
-import BackgroundMusic from "./Music";
+import BackgroundMusic from "../../utilities/Music";
 import { useState } from 'react'
 
 const VolumeBtn = () => {

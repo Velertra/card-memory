@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import LandingPage from './components/LandingPage'
-import './styles/index.css'
-import LoadingImage from './components/LoadingImage'
+import LandingPage from './components/Page/LandingPage'
+import './styles/index.scss'
+import LoadingImage from './components/Page/LoadingImage'
 
 function App() {
   const [loadingPage, setLoadingPage] = useState(false);

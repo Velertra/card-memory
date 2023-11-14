@@ -1,0 +1,40 @@
+
+.level-choices img,
+.play-area,
+.easy-btn-text,
+.med-btn-text,
+.hard-btn-text{
+  animation: wiggle 3.45s linear infinite;
+}
+
+.play-area > img{
+  animation: cardPopUp .8s ease-out;
+
+}
+
+@keyframes wiggle {
+    0% {
+        transform: translateX(20px);
+    }
+    25% {
+        transform: translateY(20px);
+    }
+    50% {
+        transform: translateX(-20px);
+    }
+    75% {
+        transform: translateY(-20px);
+    }
+    100% {
+        transform: translateX(20px);
+    }
+}
+
+@keyframes cardPopUp {
+  from {
+    transform: scale(0.7); 
+  }
+  to {
+    transform: scale(1); 
+  }
+}

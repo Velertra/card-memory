@@ -11,7 +11,7 @@ const HomeBtn = ({ isAButton, stopGame }) => {
 
     const styleVar = {
         main: { 
-            width:450,
+            width:500,
         }
     }
 
@@ -24,10 +24,9 @@ const HomeBtn = ({ isAButton, stopGame }) => {
             <img
                 
                 className="trolls-logo"
-                src="/icons/Trolls_Logo_3.svg"
+                src="/icons/trolls-logo.svg"
                 alt="trolls-logo"
             />
-                <p className="game-name">Memory match</p>
         </div>
      );
 }
