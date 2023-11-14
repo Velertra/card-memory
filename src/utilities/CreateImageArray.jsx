@@ -1,13 +1,13 @@
 const imageSelection = [
-    '/public/characters/bigblue.svg',
-    '/public/characters/branchtroll.svg',
-    '/public/characters/guyDiamond.svg',
-    '/public/characters/kingGrist.svg',
-    '/public/characters/orangeGuy.svg',
-    '/public/characters/pinkgiraffe.svg',
-    '/public/characters/poppytroll.svg',
-    '/public/characters/princessbridget.svg',
-    '/public/characters/trollhero.svg'
+    '/characters/bigblue.svg',
+    '/characters/branchtroll.svg',
+    '/characters/guyDiamond.svg',
+    '/characters/kingGrist.svg',
+    '/characters/orangeGuy.svg',
+    '/characters/pinkgiraffe.svg',
+    '/characters/poppytroll.svg',
+    '/characters/princessbridget.svg',
+    '/characters/trollhero.svg'
 ];
 
 //creates an array of numbers 0 - "cardAmount" that doesnt repeat a previous number as long as theres enough images(imageSelection).

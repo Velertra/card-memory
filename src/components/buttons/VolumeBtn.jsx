@@ -26,7 +26,7 @@ const VolumeBtn = () => {
                 : 
                 <img
                 className="volume-btn"
-                src="/public/icons/volume-2.svg" 
+                src="/icons/volume-2.svg" 
                 alt="sound-on"
                 onClick={() => handleVolume()}
                 />}
