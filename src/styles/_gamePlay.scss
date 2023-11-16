@@ -1,40 +1,17 @@
-.play-area h2{
-    color: #ffffff;
-    font-size: 9vh;
-    transform: scaleX(1.2);
-    display: inline-block;
-    padding: 1vh;
-    border: 1vh solid #ffffff;
-    border-radius: 10px; 
-}
-
-
-
 //game page
 .play-area {
-    max-width: 90%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly; 
-    margin: 0 auto;
-    padding-top: 3vh;
+    top: 10vh;
+   position: absolute;
+   height: 65vh;
+   width: 87%;
+   display: flex;
+   justify-content: space-around;
+   align-content: space-around;
+   flex-wrap: wrap;
+   margin: 3vh;
 }
 
-.play-area img {
-    min-width: 18vh;
-    height: 15vh;
-    margin-bottom: 1vh; 
-}
-
-
-
-
-@media (max-width: 1000px){
-    
-    .play-area img{
-        min-width: 18vh;
-        height: 15vh;
-    }
+/* @media (max-width: 1000px){
     .help-btn,
     .volume-btn{
         height: 10vh;
@@ -54,13 +31,6 @@
         padding: 1vh;
         width: 20vh;
     }
-    .play-area{
-        padding-top: 2vh;
-    }
-    .play-area img{
-        min-width: 11vh;
-        height: 11vh;
-    }
     .help-btn,
     .volume-btn{
         height: 7vh;
@@ -76,5 +46,17 @@
     .play-area h2{
         font-size: 4vh;
     }
-    
+} */
+
+/* .play-area img{
+    min-width: 18vh;
+    height: 15vh;
 }
+
+.play-area{
+    padding-top: 2vh;
+}
+.play-area img{
+    min-width: 11vh;
+    height: 11vh;
+} */

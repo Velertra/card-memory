@@ -23,15 +23,46 @@
     height: 40vh;
   }
 
+@media (max-width: 600px){
+    .help-btn,
+    .volume-btn{
+        height: 6vh;
+        bottom: 12vh;
+    }
+    .volume-btn{
+        right: 3vh;
+    }
+    .help-btn{
+        right: 11vh;
+    }
+}
+
   //homeBtn
 .trolls-logo{
     padding: 1vh;
     width: 45vh;
 }
 
-.game-name{
-    color: #e9904c;
-    padding-left: 15vh;
-    margin: 0;
-    width: 100%;
+@media (max-width: 600px){
+    .trolls-logo{
+        padding: 1vh;
+        width: 37vh;
+    }
+}
+
+//levelBtns
+.play-area h2{
+    color: #ffffff;
+    font-size: 9vh;
+    transform: scaleX(1.2);
+    display: inline-block;
+    padding: 1vh;
+    border: 1vh solid #ffffff;
+    border-radius: 10px; 
+}
+
+@media (max-width:600px){
+    .play-area h2{
+        font-size: 5vh;
+    }
 }

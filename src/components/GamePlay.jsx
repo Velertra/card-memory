@@ -9,10 +9,6 @@ const GamePlay = ({ gameLevel, styleChange }) => {
     const [onSwitch, setOnSwitch] = useState(false)
     const [win, setWin] = useState(true);
     const [initialFlip, setInitialFlip] = useState(false);
-    /* const [imgFirstPick, setImgFirstPick] = useState({
-        name:'',
-        title:'',
-    }) */
     let imgFirstPick = {
         name:'',
         title:'',
@@ -57,7 +53,6 @@ const GamePlay = ({ gameLevel, styleChange }) => {
 
     //when a card is clicked in the game this will check to see if another card has been pressed
     function handleImgClick(e){
-        //console.log(e.target.id)
         const cardValue = e.target.name;
         const titleName = e.target.id;
         if(imgFirstPick.name == ''){
@@ -69,7 +64,6 @@ const GamePlay = ({ gameLevel, styleChange }) => {
             compareTheCards(cardValue, titleName); 
         }
     }
-
 
     //calls after imageArray is empty;
     /* useEffect(() => {

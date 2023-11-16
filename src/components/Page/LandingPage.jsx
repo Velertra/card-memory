@@ -28,7 +28,7 @@ const LandingPage = () => {
                             isAButton={false}
                             stopGame={null}
                         />
-                        <div style={{paddingTop: '5vh'}} className='play-area'>
+                        <div className='play-area'>
                             <LevelChoices
                                 pickLevel={pickLevel}
                             />
@@ -40,7 +40,7 @@ const LandingPage = () => {
                             isAButton={true}
                             stopGame={stopGame}
                         />
-                        <div style={{ paddingTop: gameLevel !== 'hard' ? '10vh' : '' }} className='play-area'>
+                        <div className='play-area'>
                             <GamePlay
                                 gameLevel={gameLevel}
                             />

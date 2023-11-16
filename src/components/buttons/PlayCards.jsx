@@ -23,9 +23,9 @@ const PlayCards = ( {index, image, handleImgClick, initialFlip}) => {
     return ( 
         <div className={`card ${isFlipped ? 'flipped' : ''}`} >
             <div className="card-inner" src='/public/icons/cardTrolls.svg'>
-                <div className="card-front">
-                    <img  className={`image-${index}`} src={image}></img>
-                </div>
+               
+                    <img id="card-front" className={`image-${index}`} src={image}></img>
+                
                 <img name={image} onClick={(e) => handleFlipClick(e)} id={`image-${index}`} className='card-back' src='/public/icons/cardTrolls.svg'></img>
             </div>
           </div>    
