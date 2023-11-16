@@ -19,10 +19,6 @@ const LandingPage = () => {
             
     }
 
-    function styleChange(){
-        console.log(gameLevel)
-    }
-
     return (
         <>  
             <div className="game-container">
@@ -32,7 +28,7 @@ const LandingPage = () => {
                             isAButton={false}
                             stopGame={null}
                         />
-                        <div style={{paddingTop: '10vh'}} className='play-area'>
+                        <div style={{paddingTop: '5vh'}} className='play-area'>
                             <LevelChoices
                                 pickLevel={pickLevel}
                             />
@@ -47,7 +43,6 @@ const LandingPage = () => {
                         <div style={{ paddingTop: gameLevel !== 'hard' ? '10vh' : '' }} className='play-area'>
                             <GamePlay
                                 gameLevel={gameLevel}
-                                styleChange={styleChange}
                             />
                         </div>
                     </> 

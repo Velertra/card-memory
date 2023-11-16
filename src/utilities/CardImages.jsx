@@ -10,13 +10,6 @@ const CardImages = ({ levelChoice, styles, pickLevel, name}) => {
 
     return ( 
         <>
-            {/* <img
-                className={levelChoice}
-                src="/icons/cardTrolls.svg"
-                alt={levelChoice}
-                style={styles}
-                onClick={() => handleOnClick(levelChoice)}
-            ></img> */}
             <h2
                 alt={levelChoice}
                 onClick={() => handleOnClick(levelChoice)}

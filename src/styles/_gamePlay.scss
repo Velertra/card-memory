@@ -17,11 +17,12 @@
     flex-wrap: wrap;
     justify-content: space-evenly; 
     margin: 0 auto;
+    padding-top: 3vh;
 }
 
 .play-area img {
-    min-width: 24vh;
-    height: 24vh;
+    min-width: 18vh;
+    height: 15vh;
     margin-bottom: 1vh; 
 }
 
@@ -29,9 +30,10 @@
 
 
 @media (max-width: 1000px){
+    
     .play-area img{
         min-width: 18vh;
-        height: 18vh;
+        height: 15vh;
     }
     .help-btn,
     .volume-btn{
@@ -48,9 +50,16 @@
 }
 
 @media (max-width: 600px){
+    .trolls-logo{
+        padding: 1vh;
+        width: 20vh;
+    }
+    .play-area{
+        padding-top: 2vh;
+    }
     .play-area img{
-        min-width: 12vh;
-        height: 12vh;
+        min-width: 11vh;
+        height: 11vh;
     }
     .help-btn,
     .volume-btn{

@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-
 const HelpBtn = ({handleHelpBtn}) => {
     const [wasHelpClicked, setWasHelpClicked] = useState(false)
 
@@ -9,20 +8,18 @@ const HelpBtn = ({handleHelpBtn}) => {
             setWasHelpClicked(true);
         } else {
             setWasHelpClicked(false);
-        }
-        
+        }   
     }
 
     return (
         <>
             <div>    
-
-            {wasHelpClicked ? <div className='help-tab'>GO HELP YOURSELF</div> : null}
-                <img
-                    className="help-btn"
-                    src="/icons/help-circle.svg" 
-                    alt="help-btn"
-                    onClick={() => handleHelpBtn()}
+                {wasHelpClicked ? <div className='help-tab'>GO HELP YOURSELF</div> : null}
+                    <img
+                        className="help-btn"
+                        src="/icons/help-circle.svg" 
+                        alt="help-btn"
+                        onClick={() => handleHelpBtn()}
                     />
             </div> 
         </>

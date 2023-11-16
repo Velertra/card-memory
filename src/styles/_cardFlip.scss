@@ -1,0 +1,27 @@
+.card {
+    min-width: 18vh;
+    perspective: 1000px;
+    transform-style: preserve-3d;
+    transition: transform 0.9s;
+    cursor: pointer;
+  }
+  
+  .card-inner {
+    height: 16vh;
+    transform-style: preserve-3d;
+  }
+  
+  .card.flipped {
+    transform: rotateY(180deg);
+  }
+  
+  .card-front,
+  .card-back {
+    backface-visibility: hidden;
+    position: absolute;
+  }
+  
+  .card-back {
+    transform: rotateY(180deg);
+  }
+  

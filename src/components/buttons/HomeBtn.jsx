@@ -1,6 +1,5 @@
 import { useState } from 'react';
 
-
 const HomeBtn = ({ isAButton, stopGame }) => {
     
    function handleClick(){
@@ -11,18 +10,18 @@ const HomeBtn = ({ isAButton, stopGame }) => {
 
     const styleVar = {
         main: { 
-            width:500,
+            width:'30vh',
         }
     }
 
     return ( 
         <div
-            style={!isAButton ? null : styleVar.main}
+            
             className="home-container"
-            onClick={() => handleClick()}
         >
             <img
-                
+                style={!isAButton ? null : styleVar.main}
+                onClick={() => handleClick()}
                 className="trolls-logo"
                 src="/icons/trolls-logo.svg"
                 alt="trolls-logo"

@@ -1,12 +1,18 @@
 import {useState, useEffect} from 'react';
 import MergeArr from '../utilities/CreateImageArray';
 import CardImages from '../utilities/CardImages';
+import PlayCards from './buttons/PlayCards';
 
-const TrialGamePlay = ({ gameLevel, styleChange }) => {
+const GamePlay = ({ gameLevel, styleChange }) => {
     const [level, setLevel] = useState('');
     const [imageArray, setImageArray] = useState([]);
     const [onSwitch, setOnSwitch] = useState(false)
     const [win, setWin] = useState(true);
+    const [initialFlip, setInitialFlip] = useState(false);
+    /* const [imgFirstPick, setImgFirstPick] = useState({
+        name:'',
+        title:'',
+    }) */
     let imgFirstPick = {
         name:'',
         title:'',
@@ -25,8 +31,11 @@ const TrialGamePlay = ({ gameLevel, styleChange }) => {
     }
 
     function deleteFromArray(card){
-        const newState = imageArray.map(images => ((images.includes(card.slice(-15))) ? '' : images));
-        setImageArray(() => newState)   
+        setTimeout(() => {
+            const newState = imageArray.map(images => ((images.includes(card.slice(-15))) ? '' : images));
+            setImageArray(() => newState)
+        }, 1600)
+       
     }
 
     //if another card was pressed this will check that card with the previous card hit
@@ -38,6 +47,7 @@ const TrialGamePlay = ({ gameLevel, styleChange }) => {
             console.log('you hit this on purpose?')
         }else{
             console.log('sorry ya tried')
+            setInitialFlip(true)
         }
         imgFirstPick = {
             name:'',
@@ -47,8 +57,9 @@ const TrialGamePlay = ({ gameLevel, styleChange }) => {
 
     //when a card is clicked in the game this will check to see if another card has been pressed
     function handleImgClick(e){
-        const cardValue = e.target.src;
-        const titleName = e.target.className;
+        //console.log(e.target.id)
+        const cardValue = e.target.name;
+        const titleName = e.target.id;
         if(imgFirstPick.name == ''){
             imgFirstPick = {
                 name: cardValue,
@@ -59,13 +70,14 @@ const TrialGamePlay = ({ gameLevel, styleChange }) => {
         }
     }
 
+
     //calls after imageArray is empty;
-    useEffect(() => {
+    /* useEffect(() => {
         if(!win && imageArray.every(section => section.length == 0)){
             console.log('you win!')
         }
         setWin(() => false)
-    }, [imageArray])
+    }, [imageArray]) */
 
     useEffect(() => {
         handleSet()
@@ -79,9 +91,13 @@ const TrialGamePlay = ({ gameLevel, styleChange }) => {
     return ( 
         <>
         {onSwitch ? imageArray.map((image, index) => 
-            
-                <img key={index} onClick={(e) => handleImgClick(e)} className={`image-${index}`} src={image}></img>
-           
+            <PlayCards
+                key={index}
+                image={image}
+                index={index}
+                handleImgClick={handleImgClick}
+                initialFlip={initialFlip}
+            />
             ) 
             : 
             <div>theycantdothat</div>}
@@ -89,4 +105,4 @@ const TrialGamePlay = ({ gameLevel, styleChange }) => {
      );
 }
  
-export default TrialGamePlay;
+export default GamePlay;
