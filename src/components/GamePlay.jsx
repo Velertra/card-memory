@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react';
 import MergeArr from '../utilities/CreateImageArray';
 import CardImages from '../utilities/CardImages';
 import PlayCards from './buttons/PlayCards';
+import LoadingPage from './Page/LoadingImage'
 
 const GamePlay = ({ gameLevel, styleChange }) => {
     const [level, setLevel] = useState('');
@@ -43,12 +44,8 @@ const GamePlay = ({ gameLevel, styleChange }) => {
             console.log('you hit this on purpose?')
         }else{
             console.log('sorry ya tried')
-            setInitialFlip(true)
+            setInitialFlip(!initialFlip)
         }
-        imgFirstPick = {
-            name:'',
-            title:'',
-        };
     }
 
     //when a card is clicked in the game this will check to see if another card has been pressed
@@ -78,7 +75,9 @@ const GamePlay = ({ gameLevel, styleChange }) => {
         if(level !== ''){
             const images = MergeArr(level)
             setImageArray(images)
-            setOnSwitch(true)
+            setTimeout(() => {
+                setOnSwitch(true)
+            }, 1000)
         }
     }, [level])
 
@@ -94,7 +93,7 @@ const GamePlay = ({ gameLevel, styleChange }) => {
             />
             ) 
             : 
-            <div>theycantdothat</div>}
+            <LoadingPage />}
         </>
      );
 }

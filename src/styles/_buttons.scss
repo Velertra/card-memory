@@ -1,3 +1,8 @@
+.trolls-logo{
+    padding: 4vh;
+    width: 37%;
+}
+
 .help-btn,
 .volume-btn{
     position: absolute;
@@ -27,46 +32,16 @@
     .help-btn,
     .volume-btn{
         height: 6vh;
-        bottom: 12vh;
+        bottom: 9vh;
     }
     .volume-btn{
         right: 3vh;
     }
     .help-btn{
-        right: 11vh;
+        right: 9vh;
     }
-}
-
-  //homeBtn
-.trolls-logo{
-    padding: 1vh;
-    width: 45vh;
-}
-
-@media (max-width: 600px){
     .trolls-logo{
-        padding: 1vh;
+        padding: 3vh;
         width: 37vh;
     }
 }
-
-//levelBtns
-.level-area h2{
-    color: #ffffff;
-    font-size: 9vh;
-    transform: scaleX(1.2);
-    display: inline-block;
-    padding: 1vh;
-    border: 1vh solid #ffffff;
-    border-radius: 10px; 
-}
-
-@media (max-width:600px){
-    .level-area h2{
-        font-size: 5vh;
-    }
-    .level-area {
-        flex-direction: column;
-    }
-}
-

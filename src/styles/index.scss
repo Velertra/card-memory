@@ -18,7 +18,7 @@ body {
 :root{
   display: flex;
 }
-/* loading image */
+
 .loading-page{
   position: fixed;
   display: flex;
@@ -35,8 +35,6 @@ body {
 
 .loading-text{
   color: #f13174ed;
-  /* display: flex;
-  justify-content: center; */
 }
 
 @media (max-width: 1000px){
@@ -48,5 +46,6 @@ body {
 @media (max-width: 650px){
   .loading-page{
     width: 45vh;
+    top: 5%;
   }
 }
