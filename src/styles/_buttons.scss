@@ -51,7 +51,7 @@
 }
 
 //levelBtns
-.play-area h2{
+.level-area h2{
     color: #ffffff;
     font-size: 9vh;
     transform: scaleX(1.2);
@@ -62,7 +62,11 @@
 }
 
 @media (max-width:600px){
-    .play-area h2{
+    .level-area h2{
         font-size: 5vh;
     }
+    .level-area {
+        flex-direction: column;
+    }
 }
+

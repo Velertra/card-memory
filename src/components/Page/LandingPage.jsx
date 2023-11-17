@@ -28,7 +28,7 @@ const LandingPage = () => {
                             isAButton={false}
                             stopGame={null}
                         />
-                        <div className='play-area'>
+                        <div className='level-area'>
                             <LevelChoices
                                 pickLevel={pickLevel}
                             />

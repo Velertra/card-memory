@@ -1,7 +1,8 @@
 @import 'buttons';
-@import 'gamePlay';
+@import 'gameArea';
 @import 'animation';
 @import 'cardFlip';
+
 
 body {
   margin: 0;
@@ -19,14 +20,33 @@ body {
 }
 /* loading image */
 .loading-page{
-  position: absolute;
-  left: 30%;
-  top: 8%;
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200vh;
+}
+
+.loading-image{
+  display: flex;
+  justify-content: center;
+  width: 50vh;
 }
 
 .loading-text{
   color: #f13174ed;
-  display: flex;
-  justify-content: center;
-  margin-bottom: 0;
+  /* display: flex;
+  justify-content: center; */
+}
+
+@media (max-width: 1000px){
+  .loading-page{
+    width: 150vh;
+  }
+}
+
+@media (max-width: 650px){
+  .loading-page{
+    width: 45vh;
+  }
 }

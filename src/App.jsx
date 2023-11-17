@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react'
 import LandingPage from './components/Page/LandingPage'
-import './styles/index.scss'
 import LoadingImage from './components/Page/LoadingImage'
 
 function App() {

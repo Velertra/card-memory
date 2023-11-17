@@ -26,7 +26,7 @@ const PlayCards = ( {index, image, handleImgClick, initialFlip}) => {
                
                     <img id="card-front" className={`image-${index}`} src={image}></img>
                 
-                <img name={image} onClick={(e) => handleFlipClick(e)} id={`image-${index}`} className='card-back' src='/public/icons/cardTrolls.svg'></img>
+                <img name={image} onClick={(e) => handleFlipClick(e)} id={`image-${index}`} className='card-back' src='/icons/cardTrolls.svg'></img>
             </div>
           </div>    
      );

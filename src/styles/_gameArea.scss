@@ -1,0 +1,32 @@
+.play-area,
+.level-area {
+    position: absolute;
+    top: 10vh;
+    height: 65vh;
+    width: 87%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3vh;
+}
+
+//levelBtns
+.level-area h2{
+    color: #ffffff;
+    font-size: 9vh;
+    transform: scaleX(1.2);
+    display: inline-block;
+    padding: 1vh;
+    border: 1vh solid #ffffff;
+    border-radius: 10px; 
+}
+
+@media (max-width:600px){
+    .level-area h2{
+        font-size: 4vh;
+    }
+    .level-area {
+        flex-direction: column;
+    }
+}
