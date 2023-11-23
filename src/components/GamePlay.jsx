@@ -7,9 +7,11 @@ import LoadingPage from './Page/LoadingImage'
 const GamePlay = ({ gameLevel, styleChange }) => {
     const [level, setLevel] = useState('');
     const [imageArray, setImageArray] = useState([]);
-    const [onSwitch, setOnSwitch] = useState(false)
+    const [onSwitch, setOnSwitch] = useState(false);
     const [win, setWin] = useState(true);
     const [initialFlip, setInitialFlip] = useState(false);
+    const [clickAmount, setClickAmount] = useState(0);
+    const [isRunning, setIsRunning] = useState(false);
     let imgFirstPick = {
         name:'',
         title:'',
@@ -27,39 +29,70 @@ const GamePlay = ({ gameLevel, styleChange }) => {
         }
     }
 
+    function handleClickAmounts(){
+        setIsRunning(true);
+    }
+
     function deleteFromArray(card){
         setTimeout(() => {
             const newState = imageArray.map(images => ((images.includes(card.slice(-15))) ? '' : images));
             setImageArray(() => newState)
         }, 1600)
-       
     }
 
     //if another card was pressed this will check that card with the previous card hit
-    function compareTheCards(card, imgTitle){
-        if(imgFirstPick.name == card && imgFirstPick.title !== imgTitle){
-            console.log("go get a cookie!")
-            deleteFromArray(card)
-        } else if(imgFirstPick.name == card && imgFirstPick.title == imgTitle){
-            console.log('you hit this on purpose?')
-        }else{
-            console.log('sorry ya tried')
-            setInitialFlip(!initialFlip)
+     async function compareTheCards(card, imgTitle){
+            if(imgFirstPick.name == card && imgFirstPick.title !== imgTitle){
+                console.log("go get a cookie!");
+                deleteFromArray(card);
+            } else if(imgFirstPick.name == card && imgFirstPick.title == imgTitle){
+                console.log('you hit this on purpose?');
+            }else{
+                console.log('sorry ya tried');
+                setInitialFlip(!initialFlip);
+            }
+            return new Promise((resolve) => {
+            setTimeout(() => {
+                setClickAmount(0)
+                setIsRunning(() => false)
+                resolve();
+            }, 1000)
+        });
+            
         }
-    }
 
     //when a card is clicked in the game this will check to see if another card has been pressed
-    function handleImgClick(e){
+    async function handleImgClick(e){
+        
         const cardValue = e.target.name;
         const titleName = e.target.id;
-        if(imgFirstPick.name == ''){
+
+        if(imgFirstPick.name == '' && clickAmount === 0){
+            
+            console.log(imgFirstPick)
             imgFirstPick = {
                 name: cardValue,
                 title: titleName,
             }
+
         } else{
-            compareTheCards(cardValue, titleName); 
+            //setIsRunning(true);
+            //if(clickAmount > 0){
+                handleClickAmounts();
+           // } else{
+                console.log(cardValue)
+                setClickAmount(clickAmount + 2);
+                
+                await compareTheCards(cardValue, titleName); 
+            //}
+                
+    /* setClickAmount(0)
+            setIsRunning(false) */
+            
         }
+            
+        //setIsRunning(false);
+        //setIsRunning(false);
     }
 
     //calls after imageArray is empty;
@@ -90,6 +123,7 @@ const GamePlay = ({ gameLevel, styleChange }) => {
                 index={index}
                 handleImgClick={handleImgClick}
                 initialFlip={initialFlip}
+                isRunning={isRunning}
             />
             ) 
             : 
