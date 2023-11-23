@@ -12,10 +12,14 @@ const GamePlay = ({ gameLevel, styleChange }) => {
     const [initialFlip, setInitialFlip] = useState(false);
     const [clickAmount, setClickAmount] = useState(0);
     const [isRunning, setIsRunning] = useState(false);
-    let imgFirstPick = {
+    const [imgFirstPick, setImgFirstPick] = useState({
         name:'',
         title:'',
-    };
+    })
+  /*   let imgFirstPick = {
+        name:'',
+        title:'',
+    }; */
     
 
     //number of cards to duplicate
@@ -55,8 +59,12 @@ const GamePlay = ({ gameLevel, styleChange }) => {
             setTimeout(() => {
                 setClickAmount(0)
                 setIsRunning(() => false)
+                setImgFirstPick({
+                    name:'',
+                    title: '',
+                })
                 resolve();
-            }, 1000)
+            }, 2000)
         });
             
         }
@@ -70,10 +78,10 @@ const GamePlay = ({ gameLevel, styleChange }) => {
         if(imgFirstPick.name == '' && clickAmount === 0){
             
             console.log(imgFirstPick)
-            imgFirstPick = {
+            setImgFirstPick({
                 name: cardValue,
                 title: titleName,
-            }
+            })
 
         } else{
             //setIsRunning(true);
