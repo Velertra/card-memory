@@ -22,10 +22,11 @@
 .help-tab{
     position: absolute;
     top: 30%;
-    left: 30%;
+    left: 10%;
     background-color: #e37e30;
-    width: 40vh;
-    height: 40vh;
+    
+    border-color: black;
+    padding: 2vh;
   }
 
 @media (max-width: 600px){

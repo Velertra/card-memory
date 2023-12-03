@@ -14,7 +14,12 @@ const HelpBtn = ({handleHelpBtn}) => {
     return (
         <>
             <div>    
-                {wasHelpClicked ? <div className='help-tab'>GO HELP YOURSELF</div> : null}
+                {wasHelpClicked 
+                ? 
+                <div className='help-tab'>
+                    <p>Click the cards until you find a pair that matches.</p>
+                    <p>Click on Trolls logo to go home</p>
+                </div> : null}
                     <img
                         className="help-btn"
                         src="/icons/help-circle.svg" 
