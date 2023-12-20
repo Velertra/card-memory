@@ -4,7 +4,7 @@ Card Memory is a simple memory card game designed for toddlers, featuring animat
 
 Tech Used
 * Javascript
-* CSS
+* SCSS
 * HTML
 * REACT
 * VITE
