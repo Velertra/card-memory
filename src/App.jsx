@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
-import LandingPage from './components/Page/LandingPage'
-import LoadingImage from './components/Page/LoadingImage'
+import LoadingImage from './utilities/LoadingImage';
+import LandingPage from './Page/LandingPage';
+import { Link } from 'react-router-dom';
 
 function App() {
   const [loadingPage, setLoadingPage] = useState(false);
@@ -13,6 +14,9 @@ function App() {
 
   return (
   <>
+  <nav>
+    <Link to="dash">dash</Link>
+  </nav>
     {!loadingPage ? <LoadingImage /> :
       
      <LandingPage />

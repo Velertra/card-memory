@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-const HelpBtn = ({handleHelpBtn}) => {
+const HelpBtn = () => {
     const [wasHelpClicked, setWasHelpClicked] = useState(false)
 
     function handleHelpBtn(){

@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react';
 import MergeArr from '../utilities/CreateImageArray';
 import CardImages from '../utilities/CardImages';
 import PlayCards from './buttons/PlayCards';
-import LoadingPage from './Page/LoadingImage'
+import LoadingPage from '../utilities/LoadingImage'
 
 const GamePlay = ({ gameLevel, styleChange }) => {
     const [level, setLevel] = useState('');
@@ -16,11 +16,6 @@ const GamePlay = ({ gameLevel, styleChange }) => {
         name:'',
         title:'',
     })
-  /*   let imgFirstPick = {
-        name:'',
-        title:'',
-    }; */
-    
 
     //number of cards to duplicate
     function handleSet(){
@@ -47,12 +42,10 @@ const GamePlay = ({ gameLevel, styleChange }) => {
     //if another card was pressed this will check that card with the previous card hit
      async function compareTheCards(card, imgTitle){
             if(imgFirstPick.name == card && imgFirstPick.title !== imgTitle){
-                console.log("go get a cookie!");
                 deleteFromArray(card);
             } else if(imgFirstPick.name == card && imgFirstPick.title == imgTitle){
-                console.log('you hit this on purpose?');
+                null;
             }else{
-                console.log('sorry ya tried');
                 setInitialFlip(!initialFlip);
             }
             return new Promise((resolve) => {
@@ -77,39 +70,27 @@ const GamePlay = ({ gameLevel, styleChange }) => {
 
         if(imgFirstPick.name == '' && clickAmount === 0){
             
-            console.log(imgFirstPick)
+            null
             setImgFirstPick({
                 name: cardValue,
                 title: titleName,
             })
 
         } else{
-            //setIsRunning(true);
-            //if(clickAmount > 0){
                 handleClickAmounts();
-           // } else{
-                console.log(cardValue)
                 setClickAmount(clickAmount + 2);
-                
-                await compareTheCards(cardValue, titleName); 
-            //}
-                
-    /* setClickAmount(0)
-            setIsRunning(false) */
+                await compareTheCards(cardValue, titleName);
             
         }
-            
-        //setIsRunning(false);
-        //setIsRunning(false);
     }
 
     //calls after imageArray is empty;
-    /* useEffect(() => {
+    useEffect(() => {
         if(!win && imageArray.every(section => section.length == 0)){
             console.log('you win!')
         }
         setWin(() => false)
-    }, [imageArray]) */
+    }, [imageArray])
 
     useEffect(() => {
         handleSet()

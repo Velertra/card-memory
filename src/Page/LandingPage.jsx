@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react'
-import HelpBtn from "../buttons/HelpBtn";
-import VolumeBtn from "../buttons/VolumeBtn";
-import GamePlay from '../GamePlay';
-import HomeBtn from '../buttons/HomeBtn';
-import LevelChoices from '../LevelChoices';
+import VolumeBtn from "../components/buttons/VolumeBtn";
+import GamePlay from '../components/GamePlay';
+import HomeBtn from '../components/buttons/HomeBtn';
+import LevelChoices from '../components/LevelChoices';
+import HelpBtn from '../components/buttons/HelpBtn'
 
 const LandingPage = () => {
     const [startGame, setStartGame] = useState(false);

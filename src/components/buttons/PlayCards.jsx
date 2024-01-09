@@ -4,7 +4,6 @@ const PlayCards = ( {index, image, handleImgClick, initialFlip, isRunning}) => {
     const [isFlipped, setIsFlipped] = useState(initialFlip);
   
     const handleFlipClick = (e) => {
-        console.log(isRunning)
         if(!isRunning){
           setIsFlipped(!isFlipped);
           handleImgClick(e);

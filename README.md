@@ -14,5 +14,7 @@ Tech Used
 Prereq
 * Node.js and npm(Node Package Manager) - You Can get them here [nodejs.org](nodejs.org).
 
+run to start : npm run dev
+
 
 
