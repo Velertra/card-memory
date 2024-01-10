@@ -97,15 +97,15 @@ const GamePlay = ({ gameLevel, styleChange }) => {
         if(level !== ''){
             const images = MergeArr(level)
             setImageArray(images)
-            setTimeout(() => {
+            /* setTimeout(() => {
                 setOnSwitch(true)
-            }, 1000)
+            }, 1000) */
         }
     }, [level])
 
     return ( 
         <>
-        {onSwitch ? imageArray.map((image, index) => 
+        {imageArray.map((image, index) => 
             <PlayCards
                 key={index}
                 image={image}
@@ -114,9 +114,7 @@ const GamePlay = ({ gameLevel, styleChange }) => {
                 initialFlip={initialFlip}
                 isRunning={isRunning}
             />
-            ) 
-            : 
-            <LoadingPage />}
+            )}
         </>
      );
 }

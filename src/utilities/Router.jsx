@@ -1,7 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "../App";
 import ErrorPage from "../Page/Error-Page";
-import HomePage from "../Page/HomePage";
+import MemoryGame from "../Page/MemoryGame"
 
 const Router = () => {
     const router = createBrowserRouter([
@@ -11,8 +11,8 @@ const Router = () => {
             errorElement: <ErrorPage />,
         },
         {
-            path: "dash",
-            element: <HomePage />
+            path: "memory-game",
+            element: <MemoryGame />
         },
     ]);
     return <RouterProvider router={router} />

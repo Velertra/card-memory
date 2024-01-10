@@ -2,18 +2,33 @@
 @import 'gameArea';
 @import 'animation';
 @import 'cardFlip';
+@import 'homeBackground';
 
 
 body {
   margin: 0;
-  padding: 0;
+  padding: 0;/* 
+  background-image: url('/images/trolls_world_tour_sp_6.jpg');  
+  height: 120vh;
+  overflow: hidden;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;*/
+
+}
+
+.home-page{
+  height: 120vh;
+  overflow: hidden;
+}
+
+.memory-game{
   background-image: url('/images/trolls_world_tour_sp_6.jpg'); 
   height: 120vh;
   overflow: hidden;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-
 }
 
 /* :root{

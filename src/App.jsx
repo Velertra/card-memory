@@ -1,26 +1,14 @@
-import { useEffect, useState } from 'react'
-import LoadingImage from './utilities/LoadingImage';
-import LandingPage from './Page/LandingPage';
+import LandingPage from './Page/MemoryGame';
 import { Link } from 'react-router-dom';
+import HomePage from './Page/HomePage'
+import Dash from './components/Dash';
 
 function App() {
-  const [loadingPage, setLoadingPage] = useState(false);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setLoadingPage(true)
-    }, 2600)
-  }, [])
 
   return (
   <>
-  <nav>
-    <Link to="dash">dash</Link>
-  </nav>
-    {!loadingPage ? <LoadingImage /> :
-      
-     <LandingPage />
-     }
+    <Dash />
+    <HomePage />
   </>
   )
 }
