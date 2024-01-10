@@ -5,7 +5,7 @@ import HomeBtn from '../components/buttons/HomeBtn';
 import LevelChoices from '../components/LevelChoices';
 import HelpBtn from '../components/buttons/HelpBtn'
 import LoadingImage from '../utilities/LoadingImage';
-import Dash from '../components/Dash';
+import NavBar from '../components/NavBar';
 
 const LandingPage = () => {
     const [startGame, setStartGame] = useState(false);
@@ -35,7 +35,7 @@ const LandingPage = () => {
 
     return (
         <>
-            <Dash />
+            <NavBar  />
             <main className='memory-game' id='memory-game'>
                 {loadingPage ? <><div className="game-container">
                     {!startGame ?
