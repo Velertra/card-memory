@@ -5,9 +5,11 @@ const HomePage = () => {
     return ( 
         <>
             <main className='home-page' id='home-page'>
-                <div className='dash-bg' id='dash-bg'>
+                <div className="app-container" id="app-container">Memory Game
+                    <Link className="memory-link" id="memory-link" to="memory-game">
+                        <img src="/public/images/homeImages/cardmemroyss.png" className="memory-game-img" id="memory-game-img"></img>
+                    </Link>
                 </div>
-                <h1>main page</h1>
             </main>
         </>
      );

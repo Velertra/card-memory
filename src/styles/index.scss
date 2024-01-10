@@ -4,14 +4,17 @@
 @import 'cardFlip';
 @import 'homeBackground';
 @import 'navBar';
+@import 'homePage';
 
 
 body {
   margin: 0;
-  padding: 0;/* 
+  padding: 0;
+  overflow: hidden;
+  /* 
   background-image: url('/images/trolls_world_tour_sp_6.jpg');  
   height: 120vh;
-  overflow: hidden;
+  
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;*/
@@ -26,7 +29,6 @@ body {
 .memory-game{
   background-image: url('/images/trolls_world_tour_sp_6.jpg'); 
   height: 120vh;
-  overflow: hidden;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
