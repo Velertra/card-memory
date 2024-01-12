@@ -29,12 +29,13 @@ const User = mongoose.model(
 
 passport.use(
   new LocalStrategy(async (username, password, done) => {
+    const match = await bcrypt.compare(password, user.password);
     try {
       const user = await User.findOne({ username: username });
       if (!user) {
         return done(null, false, { message: "Incorrect username" });
       };
-      if (user.password !== password) {
+      if (!match) {
         return done(null, false, { message: "Incorrect password" });
       };
       return done(null, user);
@@ -74,17 +75,22 @@ app.get("/sign-up", (req, res) => res.render("sign-up-form"));
 
 
 app.post("/sign-up", async (req, res, next) => {
-    try {
-        const user = new User({
-            username: req.body.username,
-            password: req.body.password
-        });
+  try {
+    bcrypt.hash(req.body.password, 10, async (err, hashedPassword) => {
+      if(err) {
+        return next(err);
+      }
+      const user = new User({
+        username: req.body.username,
+        password: hashedPassword
+    });
         const result = await user.save();
         res.redirect("/");
+  });
     } catch(err) {
         return next(err);
-    };
-});
+    }
+    });
 
 app.post(
   "/log-in",

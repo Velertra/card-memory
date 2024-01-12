@@ -52,6 +52,12 @@
     border: none;
   }
   
-  .open-nav-btn:hover {
+  .open-nav-btn:hover,
+  .close-nav-btn:hover {
     background-color: #444;
   }
+
+  .close-nav-btn{
+    color: #444;
+  }
+  
