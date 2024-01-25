@@ -37,7 +37,7 @@ const LandingPage = () => {
         <>
             <NavBar  />
             <main className='memory-game' id='memory-game'>
-                {loadingPage ? <><div className="game-container">
+                {/* {loadingPage ? <> */}<div className="game-container">
                     {!startGame ?
                         <>
                             <HomeBtn
@@ -56,18 +56,18 @@ const LandingPage = () => {
                                 isAButton={true}
                                 stopGame={stopGame}
                             />
-                            {loadingPage ? <div className='play-area'>
+                            {/* {loadingPage ?  */}<div className='play-area'>
                                 <GamePlay
                                     gameLevel={gameLevel}
                                 />
-                            </div> : <LoadingImage />}
+                            </div>{/*  : <LoadingImage />} */}
                         </> 
                         }
                     </div>
                 <div className="menu-container">
                     <HelpBtn />  
                     <VolumeBtn />    
-                </div></> : <LoadingImage />}
+                </div>{/* </>  : <LoadingImage />} */}
                 
             </main>
         </>
