@@ -5,6 +5,7 @@
     height: 65%;
     width: 80%;
     display: flex;
+    padding-bottom: 60px;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
@@ -16,6 +17,9 @@
 //levelBtns
 .level-area h2{
     color: #371302;
+    animation-name: enterScreen;
+    animation-duration: 1s;
+
     font-size: 7vh;
     transform: scaleX(1.2);
     display: inline-block;
@@ -45,4 +49,14 @@
     .level-area {
         flex-direction: column;
     }
+}
+
+
+@keyframes enterScreen {
+    0% {font-size:1vh};
+    20% {font-size: 2vh;}
+    40% {font-size:3vh};
+    60% {font-size:4vh};
+    80% {font-size:5vh};
+    100% {font-size:7vh};
 }
