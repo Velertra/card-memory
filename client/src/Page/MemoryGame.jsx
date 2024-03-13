@@ -35,7 +35,7 @@ const LandingPage = () => {
 
     return (
         <>
-            <NavBar  />
+            {/* <NavBar  /> */}
             <main className='memory-game' id='memory-game'>
                 {/* {loadingPage ? <> */}<div className="game-container">
                     {!startGame ?

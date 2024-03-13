@@ -6,7 +6,7 @@ const HomePage = () => {
         <>
             <main className='home-page' id='home-page'>
                 <div className="app-container" id="app-container">Memory Game
-                    <Link className="memory-link" id="memory-link" to="memory-game">
+                    <Link to="memory-game" className="memory-link" id="memory-link">
                         <img src="/images/homeImages/cardmemory.png" className="memory-game-img" id="memory-game-img"></img>
                     </Link>
                 </div>

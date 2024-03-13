@@ -5,7 +5,7 @@ const NavBar = () => {
     const [navWidth, setNavWidth] = useState(0);
 
     const openNav = () => {
-        setNavWidth(250);
+        setNavWidth('30%');
     };
 
     const closeNav = () => {
@@ -14,7 +14,7 @@ const NavBar = () => {
 
     return ( 
         <div className='nav-btn' id='nav-btn'>
-            <div className="side-nav" id="side-nav-1" style={{width: `${navWidth}px`}}>
+            <div className="side-nav" id="side-nav-1" style={{width: `${navWidth}`}}>
                 <a href="#" className="close-nav-btn" onClick={closeNav}>&times;</a>
                 <nav>
                     <Link to="/">Home</Link>
