@@ -1,8 +1,8 @@
 .play-area,
 .level-area {
     position: absolute;
-    top: 50%;
-    height: 65%;
+    top: 50vh;
+    height: 50%;
     width: 80%;
     display: flex;
     padding-bottom: 60px;
@@ -31,8 +31,8 @@
 @media (max-width:1000px){
     .play-area,
     .level-area {
-        top: 38%;
-        height: 45%;
+        top: 45vh;
+        height: 42vh;
     }
 }
 
@@ -58,5 +58,5 @@
     40% {font-size:3vh};
     60% {font-size:4vh};
     80% {font-size:5vh};
-    100% {font-size:7vh};
+    100% {font-size:6vh};
 }
